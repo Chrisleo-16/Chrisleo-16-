@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="80" viewBox="0 0 1000 80" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Skills marquee">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0%" stop-color="#00d4ff"/>
+      <stop offset="50%" stop-color="#6a00ff"/>
+      <stop offset="100%" stop-color="#ff4d6d"/>
+    </linearGradient>
+    <clipPath id="pill-clip">
+      <rect x="8" y="8" rx="36" ry="36" width="984" height="64" />
+    </clipPath>
+  </defs>
+
+  <!-- Background card -->
+  <rect x="0" y="0" width="1000" height="80" rx="40" fill="transparent"/>
+
+  <!-- Pill -->
+  <g transform="translate(0,0)">
+    <rect x="8" y="8" width="984" height="64" rx="36" ry="36" fill="rgba(255,255,255,0.03)" stroke="url(#g)" stroke-width="1.8"/>
+    <!-- subtle shimmer -->
+    <rect x="-400" y="8" width="400" height="64" rx="36" fill="url(#g)" opacity="0.08">
+      <animate attributeName="x" from="-400" to="1000" dur="6s" repeatCount="indefinite" />
+    </rect>
+
+    <!-- Scrolling skills group clipped to pill -->
+    <g clip-path="url(#pill-clip)">
+      <!-- duplicate sets to create infinite loop effect -->
+      <g id="skills" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-weight="600" font-size="18" fill="#FFFFFF" opacity="0.96" >
+        <text x="1020" y="46">⚛️ React • Next.js • Flask • Node.js • Python • MySQL • AI • Automation • Docker • UI/UX</text>
+        <text x="2600" y="46">⚛️ React • Next.js • Flask • Node.js • Python • MySQL • AI • Automation • Docker • UI/UX</text>
+      </g>
+
+      <!-- animate movement (translate) -->
+      <animateTransform 
+        xlink:href="#skills"
+        attributeName="transform"
+        type="translate"
+        from="0 0"
+        to="-1580 0"
+        dur="14s"
+        repeatCount="indefinite"
+        />
+    </g>
+
+    <!-- left icon -->
+    <g transform="translate(22,18)">
+      <rect x="0" y="0" width="48" height="48" rx="12" ry="12" fill="url(#g)" />
+      <text x="8" y="34" font-family="Segoe UI, Roboto, Helvetica, Arial" font-size="22" fill="#fff" font-weight="700">⚡</text>
+    </g>
+  </g>
+</svg>
